@@ -22,7 +22,7 @@
 以小样本目标检测的论文DeFRCN的开源代码为样例，[开源代码地址](https://github.com/er-muyue/DeFRCN)
 
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron2_1.png"width=850>
+<img src="./IB/detectron2_1.png"width=850>
 </center>
 <center>
 Figure2_1: 官方demo
@@ -30,8 +30,8 @@ Figure2_1: 官方demo
 &nbsp
 
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron2_2.jpg"width=450>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron2_3.png"width=450>
+<img src="./IB/detectron2_2.jpg"width=450>
+<img src="./IB/detectron2_3.png"width=450>
 </center>
 <p align="center">Figure2_2: 努力奋斗的小邓 </p>
 &nbsp
@@ -1079,7 +1079,7 @@ class MyTransform(Transform):
 
 #### 4.目前为止的框架图：
 
-<img src="E:\杨晓东\科研\学习笔记\IB\detectron2学习（2022.7.11）/detectron3_1.webp" width=850>
+<img src="./IB/detectron3_1.webp" width=850>
 
 到目前为止，所有的内容可以总结为上面这张图：
 
@@ -1178,7 +1178,7 @@ register_all_coco()
 <p>&nbsp;</p>
 #### 7.小结：完成的数据加载流程
 
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron3_2.jpg" width=1080>
+<img src="./IB/detectron3_2.jpg" width=1080>
 
 综上所述，可以获得如上的完整的数据加载流程：
 
@@ -1207,7 +1207,7 @@ register_all_coco()
 对应着上述内容，detectron2中相关的代码都设计在data目录下：
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron3_3.png" width = 450 >
+<img src="./IB/detectron3_3.png" width = 450 >
 </center>
 
 其中：
@@ -1230,7 +1230,7 @@ register_all_coco()
 目录结构及跳转大致如下：
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron3_4.webp">
+<img src="./IB/detectron3_4.webp">
 </center>
 
 在 data 目录的__init__.py 中可以看到
@@ -1311,7 +1311,7 @@ def load_coco_json(args):
 整个detectron2 基本的训练流程都定义在这个engine-defaults.py的DefaultTrainer当中：
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron3_5.png" width=450 >
+<img src="./IB/detectron3_5.png" width=450 >
 </center>
 
 ```python
@@ -1381,7 +1381,7 @@ class DatasetMapper():
 而在DatasetMapper 和前面的介绍中的一个细小的区别就是，detectron2中会使用Instance类来包装每一个检测框的信息，而不是简单的使用字典
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron3_6.webp" >
+<img src="./IB/detectron3_6.webp" >
 </center>
 
 因此，在后续自定数据集的时候，要注意把自己定义的数据变成一个Instance的形式才可以
@@ -1402,7 +1402,7 @@ detectron2提供了一个接口函数build_model(cfg)，cfg是我们前面讲的
 ### 预训练权重的加载
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron4_1.png" width="450">
+<img src="./IB/detectron4_1.png" width="450">
 </center>
 
 如上图所示，detectron2.model_zoo模块是关于预训练模型加载的，当我们需要pretrained-model作为模型训练的起点时，我们可以在model_zoo.py中找到：
@@ -1557,7 +1557,7 @@ def get(config_path, trained: bool = False, device: Optional[str] = None):
 
 ### detectron2.modeling走读
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron4_2.png" width="450">
+<img src="./IB/detectron4_2.png" width="450">
 </center>
 
 其中：
@@ -1576,7 +1576,7 @@ def get(config_path, trained: bool = False, device: Optional[str] = None):
 
 #### backbone
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron4_3.png" width="450">
+<img src="./IB/detectron4_3.png" width="450">
 </center>
 
 如上图所示，在backbone模块中，backbone.py定义了一个模板类，后面的resnet、regnet、swin、vit都继承了它。
@@ -1687,7 +1687,7 @@ def build_resnet_backbone(cfg, input_shape):
 是从backbone/build.py中导入的，
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron4_4.png" width="450">
+<img src="./IB/detectron4_4.png" width="450">
 </center>
 
 为了可以完全看懂，我们首先来看一下backbone/build.py这个文件
@@ -1735,7 +1735,7 @@ MODEL:
 ```
 
 <center>
-<img src="E://杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron4_5.png" width="450">
+<img src="./IB/detectron4_5.png" width="450">
 </center>
 
 后面的meta_arch、proposal_generator原理和backbone差不多，都是在build.py中定义一个Registry，利用装饰器的方式对各个model的构造函数进行注册，
@@ -2251,18 +2251,18 @@ class Trainer:
 
 + 可以展示每一轮训练中使用的图片
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_1.webp" >
+<img src="./IB/detectron6_1.webp" >
 </center>
 [注]在传统的目标检测网络中只能做水平文本框检测，而这里是如何进行旋转框检测，将在后面的文章中慢慢展开，这里先不展开。
 
 + 可以展示rpn训练过程中抽样进行训练的正样本框和负样本框
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_2.webp" >
+<img src="./IB/detectron6_2.webp" >
 </center>
 
 + 可以展示在训练集上，ROIHead训练所使用的正样本
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_3.webp" >
+<img src="./IB/detectron6_3.webp" >
 </center>
 
 在训练代码中添加这类信息的主要目的有如下几个：
@@ -2411,7 +2411,7 @@ class TensorboardXWriter(EventWriter):
 第二点没有什么特殊的，在这里指明只是说，如果当希望向tensorboard 中添加图像相关的信息时，是需要修改TensorboardXWriter 这个类的，
 具体的修改也很简单，就是直接把tensorboard的add_image 方法写进来：
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_4.jpg" >
+<img src="./IB/detectron6_4.jpg" >
 </center>
 而这里涉及到的这个get_event_storage() 就会显得很奇怪了，因为按照Detectron2 这样的设计，在 run_step() 步骤中产生的信息，比如训练过程中产生的loss ，是没有显式的传给 after_step() 的， 那在hook当中，是如何通过这个函数以获得训练过程当中的信息的呢？
 
@@ -2530,7 +2530,7 @@ class TensorboardXWriter(EventWriter):
 
 + 1、首先，重写run_step方法，在获取数据的时候将当前训练轮的原图放进EventStorage对象中
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_5.webp" >
+<img src="./IB/detectron6_5.webp" >
 </center>
 
 [注]这里的两个参数 self.cfg.LOG_PERIOD 和 self.cfg.DEBUG 是通过扩展原来的cfg获得的，
@@ -2543,19 +2543,19 @@ class TensorboardXWriter(EventWriter):
 
 + 2、首先，继承并修改 TensorboardXWriter ，使得能够写入图片数据
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_6.webp" >
+<img src="./IB/detectron6_6.webp" >
 </center>
 注意这里在完成图片数据的记录之后，还需要清空events._debug_viz_image
 
 + 3、接下来就是在程序的各种地方，如法炮制的把可视化完成：
 比如在RPN中展示每次训练中使用的正样本anchor和负样本anchor
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_7.webp" >
+<img src="./IB/detectron6_7.webp" >
 </center>
 
 比如在ROIhead 当中展示当前训练ROI所使用的正样本和负样本
 <center>
-<img src="E:\杨晓东\科研\学习笔记/IB/detectron2学习（2022.7.11）/detectron6_8.webp" >
+<img src="./IB/detectron6_8.webp" >
 </center>
 这里值得注意的有两点：
 
@@ -2593,13 +2593,13 @@ class TensorboardXWriter(EventWriter):
 为了让我们的代码思路更加清晰，在写一个项目之前，可以先建立一些文件夹用于收纳文件，例如：
 
 <center>
-    <img src="E:/杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron8_1.png">
+    <img src="./IB/detectron8_1.png">
 </center>
 
 将其中部分文件夹展开后的情况如下：
 
 <center>
-    <img src="E:/杨晓东/科研/学习笔记/IB/detectron2学习（2022.7.11）/detectron8_2.png">
+    <img src="./IB/detectron8_2.png">
 </center>
 
 其中：
